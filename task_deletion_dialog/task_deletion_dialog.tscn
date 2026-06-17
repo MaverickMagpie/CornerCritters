@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://f87etx327kjr"]
+
+[ext_resource type="Script" uid="uid://c35t34evkeevp" path="res://task_deletion_dialog/task_deletion_dialog.gd" id="1_t322e"]
+
+[node name="TaskCreateDialog" type="CenterContainer" unique_id=653638172]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+script = ExtResource("1_t322e")
+
+[node name="TaskCreateSection" type="PanelContainer" parent="." unique_id=1744594482]
+layout_mode = 2
+
+[node name="TaskCreateVBox" type="VBoxContainer" parent="TaskCreateSection" unique_id=1272856622]
+layout_mode = 2
+
+[node name="DialogTextSection" type="PanelContainer" parent="TaskCreateSection/TaskCreateVBox" unique_id=1200947501]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DialogText" type="RichTextLabel" parent="TaskCreateSection/TaskCreateVBox/DialogTextSection" unique_id=2076499272]
+layout_mode = 2
+text = "Task Deletion Dialog"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoText" type="RichTextLabel" parent="TaskCreateSection/TaskCreateVBox" unique_id=1362064173]
+layout_mode = 2
+text = "Are you sure you want to delete this task?"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="TaskTitle" type="RichTextLabel" parent="TaskCreateSection/TaskCreateVBox" unique_id=1942080702]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Task Name Here"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="ChoiceHBox" type="HBoxContainer" parent="TaskCreateSection/TaskCreateVBox" unique_id=1744206713]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CancelButton" type="Button" parent="TaskCreateSection/TaskCreateVBox/ChoiceHBox" unique_id=426940015]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"
+
+[node name="ConfirmButton" type="Button" parent="TaskCreateSection/TaskCreateVBox/ChoiceHBox" unique_id=587152920]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Confirm"
+
+[connection signal="pressed" from="TaskCreateSection/TaskCreateVBox/ChoiceHBox/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="TaskCreateSection/TaskCreateVBox/ChoiceHBox/ConfirmButton" to="." method="_on_confirm_button_pressed"]

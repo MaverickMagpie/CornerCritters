@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://nd75418jjyu1"]
+
+[ext_resource type="Script" uid="uid://bnijpes3v5w0k" path="res://task_section.gd" id="1_bfu0d"]
+[ext_resource type="Script" uid="uid://70lvrwjtuwr6" path="res://main_window.gd" id="1_iwhwg"]
+[ext_resource type="Texture2D" uid="uid://h3vq80al5xoq" path="res://icon.svg" id="2_tyee0"]
+[ext_resource type="Texture2D" uid="uid://drgdgq7cbpa22" path="res://icons/settings.svg" id="3_sq7ho"]
+[ext_resource type="Texture2D" uid="uid://b1p6bl8ih8ciw" path="res://icons/sun.svg" id="4_l06f4"]
+[ext_resource type="Script" uid="uid://du654d1dafxur" path="res://time_section.gd" id="5_iwhwg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sq7ho"]
+
+[node name="MainWindow" type="Control" unique_id=928983084]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwhwg")
+
+[node name="MainMargin" type="MarginContainer" parent="." unique_id=1385118516]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="MainHBox" type="HBoxContainer" parent="MainMargin" unique_id=1429685600]
+layout_mode = 2
+
+[node name="TaskSection" type="PanelContainer" parent="MainMargin/MainHBox" unique_id=2067887771]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_bfu0d")
+
+[node name="TaskSectionVBox" type="VBoxContainer" parent="MainMargin/MainHBox/TaskSection" unique_id=105078274]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TaskDisplayScroll" type="ScrollContainer" parent="MainMargin/MainHBox/TaskSection/TaskSectionVBox" unique_id=1490094664]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TaskDisplayVBox" type="VBoxContainer" parent="MainMargin/MainHBox/TaskSection/TaskSectionVBox/TaskDisplayScroll" unique_id=1827253528]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TaskButtonHBox" type="HBoxContainer" parent="MainMargin/MainHBox/TaskSection/TaskSectionVBox" unique_id=1974424320]
+layout_mode = 2
+
+[node name="EditTaskButton" type="Button" parent="MainMargin/MainHBox/TaskSection/TaskSectionVBox/TaskButtonHBox" unique_id=1677955519]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Edit Task"
+
+[node name="CreateTaskButton" type="Button" parent="MainMargin/MainHBox/TaskSection/TaskSectionVBox/TaskButtonHBox" unique_id=1954698686]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create Task"
+
+[node name="CritterSection" type="PanelContainer" parent="MainMargin/MainHBox" unique_id=1341304457]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CritterSectionVBox" type="VBoxContainer" parent="MainMargin/MainHBox/CritterSection" unique_id=1345432333]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CritterTextMargin" type="MarginContainer" parent="MainMargin/MainHBox/CritterSection/CritterSectionVBox" unique_id=1365428135]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CritterText" type="RichTextLabel" parent="MainMargin/MainHBox/CritterSection/CritterSectionVBox/CritterTextMargin" unique_id=1033164759]
+layout_mode = 2
+text = "Test text here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CritterMargin" type="MarginContainer" parent="MainMargin/MainHBox/CritterSection/CritterSectionVBox" unique_id=1036179293]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="CritterSprite" type="TextureRect" parent="MainMargin/MainHBox/CritterSection/CritterSectionVBox/CritterMargin" unique_id=404364465]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_tyee0")
+
+[node name="InfoSection" type="PanelContainer" parent="MainMargin/MainHBox" unique_id=92381290]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InfoSectionVBox" type="VBoxContainer" parent="MainMargin/MainHBox/InfoSection" unique_id=1573188200]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SettingsSection" type="PanelContainer" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox" unique_id=1486004367]
+layout_mode = 2
+
+[node name="SettingsMargin" type="MarginContainer" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/SettingsSection" unique_id=52565992]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="SettingsHBox" type="HBoxContainer" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/SettingsSection/SettingsMargin" unique_id=1606214837]
+layout_mode = 2
+
+[node name="SettingsSeparator" type="HSeparator" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/SettingsSection/SettingsMargin/SettingsHBox" unique_id=1106296704]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sq7ho")
+
+[node name="SettingsButton" type="Button" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/SettingsSection/SettingsMargin/SettingsHBox" unique_id=840255848]
+layout_mode = 2
+icon = ExtResource("3_sq7ho")
+
+[node name="InfoTextSection" type="PanelContainer" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox" unique_id=513874183]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InfoText" type="RichTextLabel" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/InfoTextSection" unique_id=1735692009]
+layout_mode = 2
+text = "Test text here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeSection" type="PanelContainer" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox" unique_id=347813876]
+layout_mode = 2
+script = ExtResource("5_iwhwg")
+
+[node name="TimeMargin" type="MarginContainer" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/TimeSection" unique_id=235565116]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TimeVBox" type="VBoxContainer" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/TimeSection/TimeMargin" unique_id=2054485750]
+layout_mode = 2
+
+[node name="ClockHBox" type="HBoxContainer" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/TimeSection/TimeMargin/TimeVBox" unique_id=1187226604]
+layout_mode = 2
+
+[node name="ClockText" type="RichTextLabel" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/TimeSection/TimeMargin/TimeVBox/ClockHBox" unique_id=1572196255]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00:00AM"
+horizontal_alignment = 2
+
+[node name="ClockIcon" type="TextureRect" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/TimeSection/TimeMargin/TimeVBox/ClockHBox" unique_id=72325238]
+layout_mode = 2
+texture = ExtResource("4_l06f4")
+
+[node name="CalendarText" type="RichTextLabel" parent="MainMargin/MainHBox/InfoSection/InfoSectionVBox/TimeSection/TimeMargin/TimeVBox" unique_id=689315749]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Monday, January 1st, 2026"
+scroll_active = false
+horizontal_alignment = 2
+
+[connection signal="call_task_creation" from="MainMargin/MainHBox/TaskSection" to="." method="_on_task_section_call_task_creation"]
+[connection signal="call_task_deletion" from="MainMargin/MainHBox/TaskSection" to="." method="_on_task_section_call_task_deletion"]
+[connection signal="pressed" from="MainMargin/MainHBox/TaskSection/TaskSectionVBox/TaskButtonHBox/EditTaskButton" to="MainMargin/MainHBox/TaskSection" method="_on_edit_task_button_pressed"]
+[connection signal="pressed" from="MainMargin/MainHBox/TaskSection/TaskSectionVBox/TaskButtonHBox/CreateTaskButton" to="MainMargin/MainHBox/TaskSection" method="_on_create_task_button_pressed"]
