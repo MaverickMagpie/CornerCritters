@@ -40,7 +40,7 @@ func create_date_string() -> String:
 	var today = Time.get_date_dict_from_system()
 	var weekday = weekday_to_string(today.weekday)
 	var month = month_to_string(today.month)
-	var weekday_suffix = get_ordinal_suffix(today.weekday)
+	var weekday_suffix = get_ordinal_suffix(today.day)
 	return "%s, %s %s%s, %s" % [weekday, month, today.day, weekday_suffix, today.year]
 
 # Get weekday string from weekday integer
